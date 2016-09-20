@@ -2,7 +2,9 @@ var makeSlidingDogDancer = function(top, left, timeBetweenSteps) {
   //var blinkyDancer = new makeDancer(top, left, timeBetweenSteps);
 
   makeDogDancer.call(this, top, left, timeBetweenSteps);
-  this.counter = 0;
+  this.distance = 5;
+  this.setPosition('50%');
+  this.$node.addClass('sliding');
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -29,14 +31,15 @@ makeSlidingDogDancer.prototype.step = function() {
     'height': '200px'
   });
 
+  this.$node.animate({
+      // left: slide2,
+      // top: slide1,
+      // right: slide1,
+      // botom: slide2
+    left: '' + this.distance + '%'
+  });
 
-  if (this.counter % 8 === 0) {
-    this.$node.animate({
-      left: slide2,
-      top: slide1,
-      right: slide1,
-      botom: slide2
-    });
-    this.counter++;
-  }
+  this.distance += 5;
+  // this.counter++;
+  // }
 };

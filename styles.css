@@ -19,6 +19,10 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float: right;
 }
+.title, .interact{
+  padding:5px 12px;
+  float: right;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -30,4 +34,17 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.doggy {
+  border-radius: 1px;
+}
+.sliding {
+  border-radius: 100px;
+}
+.fluctuating {
+ border-radius: 300px;
+}
+
+.blinky {
+  border-radius: 10px;
 }

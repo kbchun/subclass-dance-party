@@ -33,8 +33,49 @@ $(document).ready(function() {
   });
 
   $('.lineUp').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].$node.animate({top: '50%'});
+    var position = 50;
+    var half = Math.floor(window.dancers.length / 2);
+    for (var i = 0; i < half; i++) {
+      window.dancers[i].$node.animate({
+        top: '75%',
+        left: '' + position + 'px'
+      });
+
+      position += 150;
+    }
+
+    position = 50;
+    for (var i = half; i < window.dancers.length; i++) {
+      window.dancers[i].$node.animate({
+        top: '25%',
+        left: '' + position + 'px'
+      });
+
+      position += 150;
+    }
+  });
+
+  $('.interact').on('click', function(event) {
+    var a, b, c;
+    for (var i = 0; i < window.dancers.length; i++) { // checks for specific type of dancer
+      // if (specific type of dancer) {
+      if (window.dancers[i].constructor.name === 'makeDogDancer') {
+        for (var j = 0; j < window.dancers.length; j++) { // compares distance b/w specified dancer and all other dancers
+          // don't check distance with self
+          if (i !== j) {
+            // check distance with other dancers and interact
+            a = window.dancers[i].top - window.dancers[j].top;
+            b = window.dancers[i].left - window.dancers[j].left;
+            c = Math.sqrt(a * a - b * b);
+            // if (c < certain distance) {
+            // debugger;
+            if (c < 200) {
+              // interact and do something cool
+              window.dancers[j].$node.fadeOut();
+            }
+          }
+        }
+      }
     }
   });
 });

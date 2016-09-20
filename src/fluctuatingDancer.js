@@ -1,7 +1,7 @@
 var makeFluctuatingDancer = function(top, left, timeBetweenSteps) {
   //var blinkyDancer = new makeDancer(top, left, timeBetweenSteps);
-
   makeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('fluctuating');
   this.counter = 0;
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
