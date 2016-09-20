@@ -1,5 +1,6 @@
 body, html{
   height:100%;
+  font-family: Copperplate;
 }
 body{
   margin: 0px;
@@ -13,7 +14,7 @@ body, a:link, a:visited, a:active{
 }
 .title, .addDancerButton{
   padding:5px 12px;
-  float:right;
+  float:left;
 }
 .title, .lineUp{
   padding:5px 12px;
@@ -25,10 +26,11 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #395;
 }
 .title{
   background-color: #777;
+  float: right;
 }
 .dancer{
   border:10px solid red;
