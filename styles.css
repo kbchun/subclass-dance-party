@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  /*background-color:#444;*/
+  background-image: url('https://i.ytimg.com/vi/bP3Fqn8wuFc/maxresdefault.jpg');
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
